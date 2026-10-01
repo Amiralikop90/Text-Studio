@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 
   <!-- ===== Google Search Console Verification ===== -->
-  <meta name="google-site-verification" content="t61IyN_aMENn54-JeerZo1WNgassK07g8_S8HN0hWuE" />
+  <meta name="google-site-verification" content="mLworcsiofOhMsDaAZ9Vzi7Swi1QErd75vJHjTm8bxw" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -168,7 +168,6 @@
     }
     .subtitle { text-align: center; color: var(--text-muted); margin-bottom: 24px; font-size: 14px; }
 
-    /* ===== Tabs ===== */
     .tabs {
       display: flex; gap: 0; flex-wrap: wrap;
       background: var(--surface-2); border: 1px solid var(--border);
@@ -190,7 +189,6 @@
       color: #fff;
     }
 
-    /* ===== Tab Content ===== */
     .tab-content { display: none; margin-bottom: 20px; }
     .tab-content.active { display: block; }
 
@@ -234,7 +232,6 @@
     .tool-icon { font-size: 20px; }
     .tool-name { font-size: 11px; line-height: 1.3; }
 
-    /* ===== Editor ===== */
     .editor-wrapper {
       border: 1px solid var(--border);
       background: var(--surface);
@@ -294,7 +291,6 @@
       50% { background: rgba(99, 102, 241, 0.1); }
     }
 
-    /* ===== Repeat Options ===== */
     .repeat-options {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -325,7 +321,6 @@
       box-shadow: 0 0 0 3px var(--accent-glow);
     }
 
-    /* ===== Stats Bar ===== */
     .stats-bar {
       display: flex; flex-wrap: wrap;
       gap: 0;
@@ -352,7 +347,6 @@
       font-family: 'JetBrains Mono','Fira Code',monospace;
     }
 
-    /* ===== Main Buttons ===== */
     .buttons {
       display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--border);
       margin-bottom: 20px;
@@ -379,7 +373,6 @@
       opacity: 0.5; cursor: not-allowed;
     }
 
-    /* ===== Toast ===== */
     .toast {
       position: fixed;
       bottom: 30px;
@@ -401,7 +394,6 @@
       opacity: 1;
     }
 
-    /* ===== SEO ===== */
     .seo-content { margin-top: 40px; padding-top: 30px;
       border-top: 1px solid var(--border); color: var(--text);
       font-size: 14px; line-height: 1.9;
@@ -487,7 +479,6 @@
     <h1 id="title">🎨 استودیوی متن آنلاین</h1>
     <p class="subtitle" id="subtitle">ویرایش، تبدیل، پاک‌سازی و تکرار متن با بیش از ۳۰ ابزار کاربردی</p>
 
-    <!-- Tabs -->
     <div class="tabs" id="tabs">
       <button class="tab active" data-tab="editor" data-i18n="tabEditor">📝 ویرایشگر</button>
       <button class="tab" data-tab="transform" data-i18n="tabTransform">🔤 تبدیل</button>
@@ -495,7 +486,6 @@
       <button class="tab" data-tab="repeat" data-i18n="tabRepeat">🔁 تکرار</button>
     </div>
 
-    <!-- Tab: Editor -->
     <div class="tab-content active" data-tab-content="editor">
       <div class="tool-section">
         <div class="tool-section-title" data-i18n="editorSettings">تنظیمات ویرایشگر</div>
@@ -510,7 +500,6 @@
       </div>
     </div>
 
-    <!-- Tab: Transform -->
     <div class="tab-content" data-tab-content="transform">
       <div class="tool-section">
         <div class="tool-section-title" data-i18n="transformTitle">تبدیل متن</div>
@@ -529,7 +518,6 @@
       </div>
     </div>
 
-    <!-- Tab: Cleanup -->
     <div class="tab-content" data-tab-content="cleanup">
       <div class="tool-section">
         <div class="tool-section-title" data-i18n="cleanupTitle">پاک‌سازی متن</div>
@@ -548,7 +536,6 @@
       </div>
     </div>
 
-    <!-- Tab: Repeat -->
     <div class="tab-content" data-tab-content="repeat">
       <div class="tool-section">
         <div class="tool-section-title" data-i18n="repeatTitle">تکرار متن</div>
@@ -597,7 +584,6 @@
       </div>
     </div>
 
-    <!-- Editor -->
     <div class="editor-wrapper" id="editorWrapper">
       <div class="editor-header">
         <span data-i18n="editorLabel">📝 ویرایشگر متن</span>
@@ -609,7 +595,6 @@
       <textarea class="editor" id="editor" placeholder="اینجا بنویس..." spellcheck="false"></textarea>
     </div>
 
-    <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat">
         <span class="stat-label" data-i18n="statChars">کاراکتر</span>
@@ -629,7 +614,6 @@
       </div>
     </div>
 
-    <!-- Main Buttons -->
     <div class="buttons">
       <button id="copyBtn" class="action primary" data-i18n="btnCopy">📋 کپی</button>
       <button id="downloadBtn" class="action" data-i18n="btnDownload">💾 دانلود .txt</button>
@@ -637,7 +621,6 @@
       <button id="resetBtn" class="action" data-i18n="btnReset">↺ ریست</button>
     </div>
 
-    <!-- SEO Content -->
     <section class="seo-content">
       <h2 data-i18n="seoH2">درباره‌ی Text Studio</h2>
       <p data-i18n="seoP1">Text Studio یک استودیوی متن آنلاین و رایگان است که بیش از ۳۰ ابزار کاربردی برای کار با متن در اختیار شما قرار می‌دهد. از ویرایش ساده تا تبدیل حروف، پاک‌سازی، تکرار و تحلیل — همه‌چیز در یک صفحه.</p>
@@ -688,7 +671,6 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    // ============ STATE ============
     const STORAGE_KEY = 'text_studio_content';
     const LANG_KEY = 'text_studio_lang';
     const THEME_KEY = 'text_studio_theme';
@@ -701,7 +683,6 @@
     let currentFontSize = 14;
     let editorDir = 'ltr';
 
-    // ============ DOM ELEMENTS ============
     const html = document.documentElement;
     const titleEl = document.getElementById('title');
     const subtitleEl = document.getElementById('subtitle');
@@ -724,7 +705,6 @@
     const toolBtns = document.querySelectorAll('[data-action]');
     const langBtns = document.querySelectorAll('.lang-btn');
 
-    // Repeat elements
     const repeatCount = document.getElementById('repeatCount');
     const repeatSeparator = document.getElementById('repeatSeparator');
     const repeatCustom = document.getElementById('repeatCustom');
@@ -734,7 +714,6 @@
     const copyResultBtn = document.getElementById('copyResultBtn');
     const repeatPreview = document.getElementById('repeatPreview');
 
-    // ============ TRANSLATIONS ============
     const translations = {
       fa: {
         title: '🎨 استودیوی متن آنلاین',
@@ -952,7 +931,7 @@
         faqQ1: '我的文本会存储在哪里吗？',
         faqA1: '是的，文本会自动保存在您的浏览器中（localStorage）。不会向任何服务器发送数据。',
         faqQ2: '如何重复文本？',
-        faqA2: '转到“🔁 重复”选项卡，选择次数和分隔符，然后点击“应用重复”。',
+        faqA2: '转到"🔁 重复"选项卡，选择次数和分隔符，然后点击"应用重复"。',
         faqQ3: '有撤销/重做吗？',
         faqA3: '是的，使用 ↩️ 和 ↪️ 按钮或 Ctrl+Z 和 Ctrl+Y 来撤销或重做更改。',
         faqQ4: '会添加更多工具吗？',
@@ -969,7 +948,6 @@
       return translations[currentLang][key] || translations.en[key] || key;
     }
 
-    // ============ THEME ============
     function applyTheme(theme) {
       html.setAttribute('data-theme', theme);
       themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
@@ -983,7 +961,6 @@
       applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
     });
 
-    // ============ LANGUAGE ============
     function applyLanguage(lang) {
       currentLang = lang;
       localStorage.setItem(LANG_KEY, lang);
@@ -1012,7 +989,6 @@
       btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
     });
 
-    // ============ TOAST ============
     let toastTimer;
     function showToast(msg) {
       toast.textContent = msg;
@@ -1023,7 +999,6 @@
       }, 2000);
     }
 
-    // ============ STATS ============
     function updateStats() {
       const text = editor.value;
       const chars = text.length;
@@ -1038,7 +1013,6 @@
       statReadingTime.textContent = `${readingMinutes}:${readingSeconds.toString().padStart(2, '0')}`;
     }
 
-    // ============ HISTORY (Undo/Redo) ============
     function pushHistory(value) {
       if (skipHistory) return;
       if (historyIndex < historyStack.length - 1) {
@@ -1085,7 +1059,6 @@
     undoBtn.addEventListener('click', undo);
     redoBtn.addEventListener('click', redo);
 
-    // ============ EDITOR EVENTS ============
     let saveTimer;
     function saveContent() {
       localStorage.setItem(STORAGE_KEY, editor.value);
@@ -1107,7 +1080,6 @@
       }, 500);
     });
 
-    // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
       if (e.ctrlKey || e.metaKey) {
         if (e.key === 'z' && !e.shiftKey) {
@@ -1119,7 +1091,7 @@
         } else if (e.key === 's') {
           e.preventDefault();
           saveContent();
-          showToast('💾 ' + t('downloaded').replace('✅ ', ''));
+          showToast('💾 Saved');
         } else if (e.key === 'k') {
           e.preventDefault();
           copyBtn.click();
@@ -1130,7 +1102,6 @@
       }
     });
 
-    // ============ TABS ============
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelector('.tab.active').classList.remove('active');
@@ -1141,7 +1112,6 @@
       });
     });
 
-    // ============ TOOL ACTIONS ============
     function getText() {
       return editor.value;
     }
@@ -1200,7 +1170,6 @@
       });
     });
 
-    // ============ FONT & ZOOM ============
     document.getElementById('fontMonoBtn').addEventListener('click', () => {
       currentFont = 'mono';
       editor.style.fontFamily = "'JetBrains Mono','Fira Code','Consolas','Monaco',monospace";
@@ -1227,7 +1196,6 @@
       editor.style.textAlign = editorDir === 'rtl' ? 'right' : 'left';
     });
 
-    // ============ REPEAT ============
     function getSeparator() {
       const val = repeatSeparator.value;
       switch (val) {
@@ -1299,7 +1267,6 @@
       });
     });
 
-    // ============ MAIN BUTTONS ============
     copyBtn.addEventListener('click', () => {
       if (!editor.value) return;
       navigator.clipboard.writeText(editor.value).then(() => {
@@ -1337,11 +1304,9 @@
       showToast(t('reset'));
     });
 
-    // ============ INIT ============
     applyTheme(currentTheme);
     applyLanguage(currentLang);
 
-    // Load saved content
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       editor.value = saved;
