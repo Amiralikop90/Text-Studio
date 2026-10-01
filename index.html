@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- ===== Google Search Console Verification ===== -->
+  <meta name="google-site-verification" content="t61IyN_aMENn54-JeerZo1WNgassK07g8_S8HN0hWuE" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text Studio — استودیوی متن آنلاین | ویرایش، تبدیل، پاک‌سازی و تکرار متن</title>
+
+  <meta name="description" content="استودیوی متن آنلاین و رایگان — ویرایش، تبدیل، پاک‌سازی، تکرار و تحلیل متن با بیش از ۳۰ ابزار کاربردی. پشتیبانی از ۳ زبان و دو تم.">
+  <meta name="keywords" content="Text Studio, ویرایشگر متن, ابزار متن, تبدیل متن, تکرار متن, پاک‌سازی متن, Text Editor, Text Tools, Text Repeater">
+  <meta name="author" content="Amirali Kamani">
+  <meta name="publisher" content="psoa.ir">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+  <link rel="canonical" href="https://amiralikop90.github.io/Text-Studio/">
+  <link rel="alternate" hreflang="fa" href="https://amiralikop90.github.io/Text-Studio/">
+  <link rel="alternate" hreflang="en" href="https://amiralikop90.github.io/Text-Studio/?lang=en">
+  <link rel="alternate" hreflang="zh" href="https://amiralikop90.github.io/Text-Studio/?lang=zh">
+  <link rel="alternate" hreflang="x-default" href="https://amiralikop90.github.io/Text-Studio/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amiralikop90.github.io/Text-Studio/">
+  <meta property="og:title" content="Text Studio — استودیوی متن آنلاین">
+  <meta property="og:description" content="ویرایش، تبدیل، پاک‌سازی، تکرار و تحلیل متن با بیش از ۳۰ ابزار کاربردی.">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="Text Studio">
+  <meta property="og:image" content="https://psoa.ir/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Text Studio — استودیوی متن آنلاین">
+  <meta name="twitter:description" content="بیش از ۳۰ ابزار کاربردی برای کار با متن.">
+  <meta name="twitter:image" content="https://psoa.ir/og-image.png">
+
+  <link rel="icon" type="image/x-icon" href="https://psoa.ir/favicon.ico">
+  <link rel="apple-touch-icon" href="https://psoa.ir/favicon.ico">
+  <meta name="theme-color" content="#6366f1">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Text Studio",
+    "url": "https://amiralikop90.github.io/Text-Studio/",
+    "description": "استودیوی متن آنلاین رایگان — ویرایش، تبدیل، پاک‌سازی، تکرار و تحلیل متن با بیش از ۳۰ ابزار.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Amirali Kamani", "url": "https://psoa.ir" },
+    "inLanguage": ["fa", "en", "zh"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f5f7fa; --surface: #ffffff; --surface-2: #f8fafc;
+      --text: #1a202c; --text-muted: #718096; --border: #e2e8f0;
+      --accent-1: #6366f1; --accent-2: #8b5cf6;
+      --accent-glow: rgba(99, 102, 241, 0.25);
+      --code-bg: #1a1d23; --code-text: #7dd3a0;
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+      --success: #10b981; --warning: #f59e0b; --danger: #ef4444;
+    }
+    [data-theme="dark"] {
+      --bg: #0a0a0a; --surface: #141414; --surface-2: #1c1c1c;
+      --text: #f0f0f0; --text-muted: #8a8a8a; --border: #262626;
+      --accent-1: #818cf8; --accent-2: #a78bfa;
+      --accent-glow: rgba(129, 140, 248, 0.3);
+      --code-bg: #0d0d0d; --code-text: #86efac;
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.6);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter','Segoe UI','PingFang SC','Microsoft YaHei',Tahoma,sans-serif;
+      border-radius: 0 !important;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    body {
+      background: var(--bg);
+      background-image:
+        radial-gradient(circle at 20% 10%, var(--accent-glow), transparent 40%),
+        radial-gradient(circle at 80% 90%, var(--accent-glow), transparent 40%);
+      min-height: 100vh; padding: 24px;
+      display: flex; justify-content: center; align-items: flex-start;
+      color: var(--text); overflow-x: hidden;
+    }
+    .top-bar { position: fixed; top: 20px; left: 20px; right: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; z-index: 100; pointer-events: none;
+    }
+    .top-bar > * { pointer-events: auto; }
+    .theme-toggle { width: 48px; height: 48px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); cursor: pointer; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .theme-toggle:hover { transform: scale(1.1) rotate(15deg); }
+    .lang-switcher { display: flex; border: 1px solid var(--border);
+      background: var(--surface); box-shadow: var(--shadow-md);
+    }
+    .lang-btn { padding: 12px 16px; border: none;
+      border-left: 1px solid var(--border); background: transparent;
+      color: var(--text-muted); cursor: pointer; font-size: 13px;
+      font-weight: 600; transition: all 0.2s; font-family: inherit;
+    }
+    .lang-btn:first-child { border-left: none; }
+    .lang-btn:hover { color: var(--text); background: var(--surface-2); }
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #fff;
+    }
+    .container { background: var(--surface); border: 1px solid var(--border);
+      padding: 32px; max-width: 1200px; width: 100%;
+      box-shadow: var(--shadow-lg); position: relative;
+      animation: fadeIn 0.5s ease; margin-top: 40px;
+    }
+    .container::before, .container::after {
+      content: ''; position: absolute; width: 20px; height: 20px;
+      border: 2px solid var(--accent-1);
+    }
+    .container::before { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+    .container::after { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .promo-banner {
+      display: block; text-decoration: none; color: inherit;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      padding: 16px 20px; margin-bottom: 24px;
+      position: relative; overflow: hidden; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .promo-banner::before {
+      content: ''; position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+    .promo-banner:hover { transform: translateY(-2px); }
+    .promo-content { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
+    .promo-icon { font-size: 28px; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .promo-text { flex: 1; color: #fff; }
+    .promo-title { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .promo-subtitle { font-size: 12px; opacity: 0.9; }
+    .promo-url { font-size: 12px; font-weight: 700; color: #fff;
+      background: rgba(255,255,255,0.2); padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.3); white-space: nowrap;
+    }
+    h1 { color: var(--text); margin-bottom: 10px; text-align: center;
+      font-size: 26px; font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle { text-align: center; color: var(--text-muted); margin-bottom: 24px; font-size: 14px; }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      display: flex; gap: 0; flex-wrap: wrap;
+      background: var(--surface-2); border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .tab {
+      flex: 1; min-width: fit-content;
+      padding: 14px 18px; border: none;
+      border-left: 1px solid var(--border);
+      background: transparent; color: var(--text-muted);
+      cursor: pointer; font-size: 13px; font-weight: 600;
+      font-family: inherit; transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .tab:first-child { border-left: none; }
+    .tab:hover { color: var(--text); background: var(--surface); }
+    .tab.active {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #fff;
+    }
+
+    /* ===== Tab Content ===== */
+    .tab-content { display: none; margin-bottom: 20px; }
+    .tab-content.active { display: block; }
+
+    .tool-section {
+      padding: 20px; background: var(--surface-2);
+      border: 1px solid var(--border);
+    }
+    .tool-section-title {
+      font-size: 12px; font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 8px;
+    }
+    .tool-btn {
+      padding: 12px 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 12px; font-weight: 500;
+      font-family: inherit;
+      transition: all 0.2s;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 4px;
+      text-align: center;
+      min-height: 70px;
+    }
+    .tool-btn:hover {
+      border-color: var(--accent-1);
+      color: var(--accent-1);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .tool-btn:active { transform: scale(0.97); }
+    .tool-icon { font-size: 20px; }
+    .tool-name { font-size: 11px; line-height: 1.3; }
+
+    /* ===== Editor ===== */
+    .editor-wrapper {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .editor-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .editor-actions {
+      display: flex; gap: 6px;
+    }
+    .editor-action {
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 11px;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .editor-action:hover {
+      color: var(--accent-1);
+      border-color: var(--accent-1);
+    }
+    textarea.editor {
+      width: 100%; min-height: 280px; max-height: 500px;
+      padding: 16px;
+      border: none; background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-family: 'JetBrains Mono','Fira Code','Consolas','Monaco',monospace;
+      line-height: 1.7;
+      resize: vertical;
+      outline: none;
+      direction: ltr;
+      text-align: left;
+    }
+    textarea.editor:focus {
+      box-shadow: inset 0 0 0 2px var(--accent-1);
+    }
+    textarea.editor::placeholder {
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+    .editor-wrapper.flash textarea.editor {
+      animation: editorFlash 0.4s ease;
+    }
+    @keyframes editorFlash {
+      0%, 100% { background: var(--surface); }
+      50% { background: rgba(99, 102, 241, 0.1); }
+    }
+
+    /* ===== Repeat Options ===== */
+    .repeat-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .repeat-option {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .repeat-option label {
+      font-size: 12px; font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .repeat-option input[type="number"],
+    .repeat-option select,
+    .repeat-option input[type="text"] {
+      width: 100%; padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      font-family: inherit;
+    }
+    .repeat-option input:focus,
+    .repeat-option select:focus {
+      outline: none; border-color: var(--accent-1);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    /* ===== Stats Bar ===== */
+    .stats-bar {
+      display: flex; flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      margin-bottom: 16px;
+    }
+    .stat {
+      flex: 1; min-width: 100px;
+      padding: 10px 14px;
+      border-left: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      gap: 2px;
+    }
+    .stat:first-child { border-left: none; }
+    .stat-label {
+      font-size: 10px; font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .stat-value {
+      font-size: 16px; font-weight: 700;
+      color: var(--text);
+      font-family: 'JetBrains Mono','Fira Code',monospace;
+    }
+
+    /* ===== Main Buttons ===== */
+    .buttons {
+      display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    button.action {
+      padding: 14px 18px; border: none;
+      border-left: 1px solid var(--border);
+      cursor: pointer; font-size: 13px; font-weight: 500;
+      transition: all 0.25s;
+      background: var(--surface-2); color: var(--text);
+      display: inline-flex; align-items: center; gap: 6px;
+      justify-content: center; font-family: inherit;
+      flex: 1; min-width: 100px;
+    }
+    button.action:first-child { border-left: none; }
+    button.action:hover { background: var(--surface); color: var(--accent-1); }
+    button.action:active { transform: scale(0.98); }
+    button.action.primary {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #fff; font-weight: 600;
+    }
+    button.action.primary:hover { filter: brightness(1.1); color: #fff; }
+    button.action:disabled {
+      opacity: 0.5; cursor: not-allowed;
+    }
+
+    /* ===== Toast ===== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px var(--accent-glow);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ===== SEO ===== */
+    .seo-content { margin-top: 40px; padding-top: 30px;
+      border-top: 1px solid var(--border); color: var(--text);
+      font-size: 14px; line-height: 1.9;
+    }
+    .seo-content h2 { font-size: 18px; font-weight: 700; margin-bottom: 14px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .seo-content h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px; color: var(--text); }
+    .seo-content p { color: var(--text-muted); margin-bottom: 12px; }
+    .seo-content ul { list-style: none; padding-right: 0; margin-bottom: 14px; }
+    .seo-content li { padding: 6px 0; color: var(--text-muted);
+      position: relative; padding-right: 22px;
+    }
+    .seo-content li::before { content: '✓'; position: absolute; right: 0;
+      color: var(--accent-1); font-weight: 700;
+    }
+    .faq-item { border: 1px solid var(--border); padding: 14px 18px;
+      margin-bottom: 10px; background: var(--surface-2);
+    }
+    .faq-item summary { cursor: pointer; font-weight: 600;
+      color: var(--text); font-size: 14px; list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before { content: '▸ '; color: var(--accent-1);
+      transition: transform 0.2s; display: inline-block;
+    }
+    .faq-item[open] summary::before { transform: rotate(90deg); }
+    .faq-item p { margin-top: 10px; color: var(--text-muted);
+      font-size: 13px; line-height: 1.8;
+    }
+
+    .footer { text-align: center; margin-top: 28px; padding-top: 22px;
+      border-top: 1px solid var(--border); font-size: 13px;
+      color: var(--text-muted); line-height: 1.9;
+    }
+    .footer a { color: var(--accent-1); text-decoration: none; font-weight: 600; }
+    .footer a:hover { color: var(--accent-2); text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .container { padding: 20px; margin-top: 60px; }
+      h1 { font-size: 20px; }
+      .theme-toggle { width: 42px; height: 42px; font-size: 18px; }
+      .lang-btn { padding: 10px 10px; font-size: 11px; }
+      .top-bar { top: 12px; left: 12px; right: 12px; }
+      .promo-content { flex-wrap: wrap; }
+      .promo-url { font-size: 11px; padding: 6px 10px; }
+      .promo-icon { font-size: 22px; }
+      .tab { font-size: 11px; padding: 10px 10px; }
+      .tools-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+      .stat { min-width: 80px; padding: 8px 10px; }
+      .stat-value { font-size: 13px; }
+      button.action { padding: 12px 10px; font-size: 12px; }
+      textarea.editor { font-size: 13px; min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">🌙</button>
+    <nav class="lang-switcher" aria-label="انتخاب زبان">
+      <button class="lang-btn active" data-lang="fa" aria-label="فارسی">🇮🇷 فارسی</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">🇬🇧 English</button>
+      <button class="lang-btn" data-lang="zh" aria-label="中文">🇨🇳 中文</button>
+    </nav>
+  </div>
+
+  <main class="container">
+
+    <a href="https://psoa.ir" target="_blank" rel="noopener" class="promo-banner" aria-label="سایت رسمی امیرعلی کمانی">
+      <div class="promo-content">
+        <span class="promo-icon" aria-hidden="true">🚀</span>
+        <div class="promo-text">
+          <div class="promo-title" data-i18n="promoTitle">سایت رسمی من — psoa.ir</div>
+          <div class="promo-subtitle" data-i18n="promoSubtitle">یه سر بزن، چیزهای جالبی داری!</div>
+        </div>
+        <span class="promo-url">psoa.ir ←</span>
+      </div>
+    </a>
+
+    <h1 id="title">🎨 استودیوی متن آنلاین</h1>
+    <p class="subtitle" id="subtitle">ویرایش، تبدیل، پاک‌سازی و تکرار متن با بیش از ۳۰ ابزار کاربردی</p>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="editor" data-i18n="tabEditor">📝 ویرایشگر</button>
+      <button class="tab" data-tab="transform" data-i18n="tabTransform">🔤 تبدیل</button>
+      <button class="tab" data-tab="cleanup" data-i18n="tabCleanup">🧹 پاک‌سازی</button>
+      <button class="tab" data-tab="repeat" data-i18n="tabRepeat">🔁 تکرار</button>
+    </div>
+
+    <!-- Tab: Editor -->
+    <div class="tab-content active" data-tab-content="editor">
+      <div class="tool-section">
+        <div class="tool-section-title" data-i18n="editorSettings">تنظیمات ویرایشگر</div>
+        <div class="tools-grid">
+          <button class="tool-btn" id="fontMonoBtn"><span class="tool-icon">🔤</span><span class="tool-name" data-i18n="fontMono">مونو</span></button>
+          <button class="tool-btn" id="fontSansBtn"><span class="tool-icon">📝</span><span class="tool-name" data-i18n="fontSans">ساده</span></button>
+          <button class="tool-btn" id="fontSerifBtn"><span class="tool-icon">✒️</span><span class="tool-name" data-i18n="fontSerif">سریف</span></button>
+          <button class="tool-btn" id="zoomInBtn"><span class="tool-icon">🔍+</span><span class="tool-name" data-i18n="zoomIn">بزرگ‌تر</span></button>
+          <button class="tool-btn" id="zoomOutBtn"><span class="tool-icon">🔍-</span><span class="tool-name" data-i18n="zoomOut">کوچک‌تر</span></button>
+          <button class="tool-btn" id="toggleDirBtn"><span class="tool-icon">↔️</span><span class="tool-name" data-i18n="toggleDir">تغییر جهت</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Transform -->
+    <div class="tab-content" data-tab-content="transform">
+      <div class="tool-section">
+        <div class="tool-section-title" data-i18n="transformTitle">تبدیل متن</div>
+        <div class="tools-grid">
+          <button class="tool-btn" data-action="uppercase"><span class="tool-icon">🔠</span><span class="tool-name" data-i18n="tUppercase">همه بزرگ</span></button>
+          <button class="tool-btn" data-action="lowercase"><span class="tool-icon">🔡</span><span class="tool-name" data-i18n="tLowercase">همه کوچیک</span></button>
+          <button class="tool-btn" data-action="titlecase"><span class="tool-icon">✨</span><span class="tool-name" data-i18n="tTitlecase">عنوان</span></button>
+          <button class="tool-btn" data-action="sentencecase"><span class="tool-icon">📝</span><span class="tool-name" data-i18n="tSentencecase">جمله</span></button>
+          <button class="tool-btn" data-action="togglecase"><span class="tool-icon">🔄</span><span class="tool-name" data-i18n="tTogglecase">برعکس حالت</span></button>
+          <button class="tool-btn" data-action="reversetext"><span class="tool-icon">🔃</span><span class="tool-name" data-i18n="tReversetext">برعکس متن</span></button>
+          <button class="tool-btn" data-action="reverselines"><span class="tool-icon">↕️</span><span class="tool-name" data-i18n="tReverselines">برعکس خطوط</span></button>
+          <button class="tool-btn" data-action="shufflelines"><span class="tool-icon">🔀</span><span class="tool-name" data-i18n="tShufflelines">خطوط تصادفی</span></button>
+          <button class="tool-btn" data-action="sortaz"><span class="tool-icon">⬆️</span><span class="tool-name" data-i18n="tSortaz">مرتب A-Z</span></button>
+          <button class="tool-btn" data-action="sortza"><span class="tool-icon">⬇️</span><span class="tool-name" data-i18n="tSortza">مرتب Z-A</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Cleanup -->
+    <div class="tab-content" data-tab-content="cleanup">
+      <div class="tool-section">
+        <div class="tool-section-title" data-i18n="cleanupTitle">پاک‌سازی متن</div>
+        <div class="tools-grid">
+          <button class="tool-btn" data-action="removespaces"><span class="tool-icon">✂️</span><span class="tool-name" data-i18n="cRemovespaces">فاصله اضافه</span></button>
+          <button class="tool-btn" data-action="removeempty"><span class="tool-icon">🚫</span><span class="tool-name" data-i18n="cRemoveempty">خطوط خالی</span></button>
+          <button class="tool-btn" data-action="removenumbers"><span class="tool-icon">🔢</span><span class="tool-name" data-i18n="cRemovenumbers">حذف اعداد</span></button>
+          <button class="tool-btn" data-action="removeletters"><span class="tool-icon">🔤</span><span class="tool-name" data-i18n="cRemoveletters">حذف حروف</span></button>
+          <button class="tool-btn" data-action="removesymbols"><span class="tool-icon">🎯</span><span class="tool-name" data-i18n="cRemovesymbols">حذف نمادها</span></button>
+          <button class="tool-btn" data-action="trimlines"><span class="tool-icon">📏</span><span class="tool-name" data-i18n="cTrimlines">Trim خطوط</span></button>
+          <button class="tool-btn" data-action="removeduplicates"><span class="tool-icon">⬅️</span><span class="tool-name" data-i18n="cRemoveduplicates">خطوط تکراری</span></button>
+          <button class="tool-btn" data-action="removeallspaces"><span class="tool-icon">🧹</span><span class="tool-name" data-i18n="cRemoveallspaces">همه فاصله‌ها</span></button>
+          <button class="tool-btn" data-action="removepunctuation"><span class="tool-icon">🚫</span><span class="tool-name" data-i18n="cRemovepunctuation">علائم نگارشی</span></button>
+          <button class="tool-btn" data-action="removeemoji"><span class="tool-icon">😀</span><span class="tool-name" data-i18n="cRemoveemoji">حذف Emoji</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Repeat -->
+    <div class="tab-content" data-tab-content="repeat">
+      <div class="tool-section">
+        <div class="tool-section-title" data-i18n="repeatTitle">تکرار متن</div>
+
+        <div class="repeat-options">
+          <div class="repeat-option">
+            <label data-i18n="repeatCount">تعداد تکرار</label>
+            <input type="number" id="repeatCount" value="5" min="1" max="1000">
+          </div>
+          <div class="repeat-option">
+            <label data-i18n="repeatSeparator">جداکننده</label>
+            <select id="repeatSeparator">
+              <option value="newline" data-i18n="sepNewline">خط جدید</option>
+              <option value="space" data-i18n="sepSpace">فاصله</option>
+              <option value="comma" data-i18n="sepComma">کاما</option>
+              <option value="commaspace" data-i18n="sepCommaSpace">کاما + فاصله</option>
+              <option value="none" data-i18n="sepNone">بدون جداکننده</option>
+              <option value="custom" data-i18n="sepCustom">دلخواه</option>
+            </select>
+          </div>
+          <div class="repeat-option">
+            <label data-i18n="repeatCustom">جداکننده دلخواه</label>
+            <input type="text" id="repeatCustom" placeholder="---" disabled>
+          </div>
+          <div class="repeat-option">
+            <label data-i18n="repeatNumbering">شماره‌گذاری</label>
+            <select id="repeatNumbering">
+              <option value="none" data-i18n="numNone">بدون شماره</option>
+              <option value="dotted" data-i18n="numDotted">1. 2. 3.</option>
+              <option value="parenthesis" data-i18n="numParenthesis">(1) (2) (3)</option>
+              <option value="dash" data-i18n="numDash">1- 2- 3-</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tools-grid" style="margin-top: 16px;">
+          <button class="tool-btn" id="applyRepeatBtn" style="background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); color: #fff; border-color: transparent;"><span class="tool-icon">🔁</span><span class="tool-name" data-i18n="repeatApply">اعمال تکرار</span></button>
+          <button class="tool-btn" id="swapRepeatBtn"><span class="tool-icon">🔄</span><span class="tool-name" data-i18n="repeatSwap">جابجایی</span></button>
+          <button class="tool-btn" id="copyResultBtn"><span class="tool-icon">📋</span><span class="tool-name" data-i18n="repeatCopy">کپی نتیجه</span></button>
+        </div>
+
+        <div style="margin-top: 16px; padding: 12px; background: var(--surface); border: 1px solid var(--border); font-size: 12px; color: var(--text-muted);">
+          <span data-i18n="repeatPreviewLabel">پیش‌نمایش تعداد کاراکتر خروجی:</span>
+          <strong id="repeatPreview" style="color: var(--accent-1); font-family: 'JetBrains Mono', monospace;">—</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="editor-wrapper" id="editorWrapper">
+      <div class="editor-header">
+        <span data-i18n="editorLabel">📝 ویرایشگر متن</span>
+        <div class="editor-actions">
+          <button class="editor-action" id="undoBtn" title="Ctrl+Z" data-i18n="btnUndo">↩️ Undo</button>
+          <button class="editor-action" id="redoBtn" title="Ctrl+Y" data-i18n="btnRedo">↪️ Redo</button>
+        </div>
+      </div>
+      <textarea class="editor" id="editor" placeholder="اینجا بنویس..." spellcheck="false"></textarea>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-label" data-i18n="statChars">کاراکتر</span>
+        <span class="stat-value" id="statChars">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" data-i18n="statWords">کلمه</span>
+        <span class="stat-value" id="statWords">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" data-i18n="statLines">خط</span>
+        <span class="stat-value" id="statLines">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" data-i18n="statReadingTime">زمان مطالعه</span>
+        <span class="stat-value" id="statReadingTime">0:00</span>
+      </div>
+    </div>
+
+    <!-- Main Buttons -->
+    <div class="buttons">
+      <button id="copyBtn" class="action primary" data-i18n="btnCopy">📋 کپی</button>
+      <button id="downloadBtn" class="action" data-i18n="btnDownload">💾 دانلود .txt</button>
+      <button id="clearBtn" class="action" data-i18n="btnClear">🗑️ پاک</button>
+      <button id="resetBtn" class="action" data-i18n="btnReset">↺ ریست</button>
+    </div>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <h2 data-i18n="seoH2">درباره‌ی Text Studio</h2>
+      <p data-i18n="seoP1">Text Studio یک استودیوی متن آنلاین و رایگان است که بیش از ۳۰ ابزار کاربردی برای کار با متن در اختیار شما قرار می‌دهد. از ویرایش ساده تا تبدیل حروف، پاک‌سازی، تکرار و تحلیل — همه‌چیز در یک صفحه.</p>
+
+      <h3 data-i18n="seoH3Features">ویژگی‌های کلیدی</h3>
+      <ul>
+        <li data-i18n="feat1">📝 ویرایشگر متن با ذخیره خودکار و Undo/Redo</li>
+        <li data-i18n="feat2">🔤 ۱۰ ابزار تبدیل متن (بزرگ، کوچیک، عنوان، برعکس، ...)</li>
+        <li data-i18n="feat3">🧹 ۱۰ ابزار پاک‌سازی (فاصله، خط خالی، اعداد، نماد، ...)</li>
+        <li data-i18n="feat4">🔁 تکرار متن با جداکننده و شماره‌گذاری دلخواه</li>
+        <li data-i18n="feat5">📊 آمار زنده — کاراکتر، کلمه، خط، زمان مطالعه</li>
+        <li data-i18n="feat6">🌐 پشتیبانی از ۳ زبان (فارسی، انگلیسی، چینی)</li>
+        <li data-i18n="feat7">🌙 دو تم تاریک و روشن</li>
+        <li data-i18n="feat8">📋 کپی، دانلود و پاک کردن با یک کلیک</li>
+      </ul>
+
+      <h3 data-i18n="seoH3Faq">سوالات متداول</h3>
+
+      <details class="faq-item">
+        <summary data-i18n="faqQ1">آیا متن من ذخیره می‌شه؟</summary>
+        <p data-i18n="faqA1">بله، متن به صورت خودکار در مرورگر خود شما (localStorage) ذخیره می‌شه. هیچ داده‌ای به سرور ارسال نمی‌شه.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="faqQ2">چطور متن رو تکرار کنم؟</summary>
+        <p data-i18n="faqA2">به تب «🔁 تکرار» برو، تعداد و جداکننده رو انتخاب کن، بعد روی «اعمال تکرار» بزن.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="faqQ3">آیا Undo/Redo داره؟</summary>
+        <p data-i18n="faqA3">بله، با دکمه‌های ↩️ و ↪️ یا کلیدهای Ctrl+Z و Ctrl+Y می‌تونی تغییرات رو برگردونی.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary data-i18n="faqQ4">آیا ابزارهای بیشتری اضافه می‌شه؟</summary>
+        <p data-i18n="faqA4">بله، در نسخه‌های بعدی: جستجو و جایگزینی، تحلیل کامل، رمزنگاری (Base64، URL، ...)، قالب‌بندی و کاراکترهای خاص.</p>
+      </details>
+    </section>
+
+    <footer class="footer">
+      <span data-i18n="footerText">برای دیدن لایسنس این وب‌سایت، لطفاً به</span>
+      <a href="https://psoa.ir/licens.html" target="_blank" rel="noopener">psoa.ir/licens.html</a>
+      <span data-i18n="footerText2">مراجعه کنید.</span>
+    </footer>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ============ STATE ============
+    const STORAGE_KEY = 'text_studio_content';
+    const LANG_KEY = 'text_studio_lang';
+    const THEME_KEY = 'text_studio_theme';
+    const MAX_HISTORY = 50;
+
+    let historyStack = [];
+    let historyIndex = -1;
+    let skipHistory = false;
+    let currentFont = 'mono';
+    let currentFontSize = 14;
+    let editorDir = 'ltr';
+
+    // ============ DOM ELEMENTS ============
+    const html = document.documentElement;
+    const titleEl = document.getElementById('title');
+    const subtitleEl = document.getElementById('subtitle');
+    const editor = document.getElementById('editor');
+    const editorWrapper = document.getElementById('editorWrapper');
+    const themeToggle = document.getElementById('themeToggle');
+    const toast = document.getElementById('toast');
+    const statChars = document.getElementById('statChars');
+    const statWords = document.getElementById('statWords');
+    const statLines = document.getElementById('statLines');
+    const statReadingTime = document.getElementById('statReadingTime');
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const toolBtns = document.querySelectorAll('[data-action]');
+    const langBtns = document.querySelectorAll('.lang-btn');
+
+    // Repeat elements
+    const repeatCount = document.getElementById('repeatCount');
+    const repeatSeparator = document.getElementById('repeatSeparator');
+    const repeatCustom = document.getElementById('repeatCustom');
+    const repeatNumbering = document.getElementById('repeatNumbering');
+    const applyRepeatBtn = document.getElementById('applyRepeatBtn');
+    const swapRepeatBtn = document.getElementById('swapRepeatBtn');
+    const copyResultBtn = document.getElementById('copyResultBtn');
+    const repeatPreview = document.getElementById('repeatPreview');
+
+    // ============ TRANSLATIONS ============
+    const translations = {
+      fa: {
+        title: '🎨 استودیوی متن آنلاین',
+        subtitle: 'ویرایش، تبدیل، پاک‌سازی و تکرار متن با بیش از ۳۰ ابزار کاربردی',
+        tabEditor: '📝 ویرایشگر',
+        tabTransform: '🔤 تبدیل',
+        tabCleanup: '🧹 پاک‌سازی',
+        tabRepeat: '🔁 تکرار',
+        editorSettings: 'تنظیمات ویرایشگر',
+        editorLabel: '📝 ویرایشگر متن',
+        fontMono: 'مونو', fontSans: 'ساده', fontSerif: 'سریف',
+        zoomIn: 'بزرگ‌تر', zoomOut: 'کوچک‌تر', toggleDir: 'تغییر جهت',
+        transformTitle: 'تبدیل متن',
+        tUppercase: 'همه بزرگ', tLowercase: 'همه کوچیک', tTitlecase: 'عنوان',
+        tSentencecase: 'جمله', tTogglecase: 'برعکس حالت', tReversetext: 'برعکس متن',
+        tReverselines: 'برعکس خطوط', tShufflelines: 'خطوط تصادفی',
+        tSortaz: 'مرتب A-Z', tSortza: 'مرتب Z-A',
+        cleanupTitle: 'پاک‌سازی متن',
+        cRemovespaces: 'فاصله اضافه', cRemoveempty: 'خطوط خالی',
+        cRemovenumbers: 'حذف اعداد', cRemoveletters: 'حذف حروف',
+        cRemovesymbols: 'حذف نمادها', cTrimlines: 'Trim خطوط',
+        cRemoveduplicates: 'خطوط تکراری', cRemoveallspaces: 'همه فاصله‌ها',
+        cRemovepunctuation: 'علائم نگارشی', cRemoveemoji: 'حذف Emoji',
+        repeatTitle: 'تکرار متن',
+        repeatCount: 'تعداد تکرار',
+        repeatSeparator: 'جداکننده',
+        sepNewline: 'خط جدید', sepSpace: 'فاصله', sepComma: 'کاما',
+        sepCommaSpace: 'کاما + فاصله', sepNone: 'بدون جداکننده', sepCustom: 'دلخواه',
+        repeatCustom: 'جداکننده دلخواه',
+        repeatNumbering: 'شماره‌گذاری',
+        numNone: 'بدون شماره', numDotted: '1. 2. 3.',
+        numParenthesis: '(1) (2) (3)', numDash: '1- 2- 3-',
+        repeatApply: 'اعمال تکرار',
+        repeatSwap: 'جابجایی',
+        repeatCopy: 'کپی نتیجه',
+        repeatPreviewLabel: 'پیش‌نمایش تعداد کاراکتر خروجی:',
+        statChars: 'کاراکتر', statWords: 'کلمه', statLines: 'خط', statReadingTime: 'زمان مطالعه',
+        btnUndo: '↩️ Undo', btnRedo: '↪️ Redo',
+        btnCopy: '📋 کپی', btnDownload: '💾 دانلود .txt',
+        btnClear: '🗑️ پاک', btnReset: '↺ ریست',
+        copied: '✅ کپی شد!',
+        downloaded: '✅ دانلود شد!',
+        cleared: '🗑️ پاک شد',
+        reset: '↺ ریست شد',
+        undoed: '↩️ برگشت',
+        redoed: '↪️ رفت جلو',
+        repeated: '🔁 تکرار شد',
+        swapped: '🔄 جابجا شد',
+        noUndo: 'چیزی برای برگشت نیست',
+        noRedo: 'چیزی برای جلو رفتن نیست',
+        promoTitle: 'سایت رسمی من — psoa.ir',
+        promoSubtitle: 'یه سر بزن، چیزهای جالبی داری!',
+        footerText: 'برای دیدن لایسنس این وب‌سایت، لطفاً به',
+        footerText2: 'مراجعه کنید.',
+        seoH2: 'درباره‌ی Text Studio',
+        seoP1: 'Text Studio یک استودیوی متن آنلاین و رایگان است که بیش از ۳۰ ابزار کاربردی برای کار با متن در اختیار شما قرار می‌دهد. از ویرایش ساده تا تبدیل حروف، پاک‌سازی، تکرار و تحلیل — همه‌چیز در یک صفحه.',
+        seoH3Features: 'ویژگی‌های کلیدی',
+        feat1: '📝 ویرایشگر متن با ذخیره خودکار و Undo/Redo',
+        feat2: '🔤 ۱۰ ابزار تبدیل متن (بزرگ، کوچیک، عنوان، برعکس، ...)',
+        feat3: '🧹 ۱۰ ابزار پاک‌سازی (فاصله، خط خالی، اعداد، نماد، ...)',
+        feat4: '🔁 تکرار متن با جداکننده و شماره‌گذاری دلخواه',
+        feat5: '📊 آمار زنده — کاراکتر، کلمه، خط، زمان مطالعه',
+        feat6: '🌐 پشتیبانی از ۳ زبان (فارسی، انگلیسی، چینی)',
+        feat7: '🌙 دو تم تاریک و روشن',
+        feat8: '📋 کپی، دانلود و پاک کردن با یک کلیک',
+        seoH3Faq: 'سوالات متداول',
+        faqQ1: 'آیا متن من ذخیره می‌شه؟',
+        faqA1: 'بله، متن به صورت خودکار در مرورگر خود شما (localStorage) ذخیره می‌شه. هیچ داده‌ای به سرور ارسال نمی‌شه.',
+        faqQ2: 'چطور متن رو تکرار کنم؟',
+        faqA2: 'به تب «🔁 تکرار» برو، تعداد و جداکننده رو انتخاب کن، بعد روی «اعمال تکرار» بزن.',
+        faqQ3: 'آیا Undo/Redo داره؟',
+        faqA3: 'بله، با دکمه‌های ↩️ و ↪️ یا کلیدهای Ctrl+Z و Ctrl+Y می‌تونی تغییرات رو برگردونی.',
+        faqQ4: 'آیا ابزارهای بیشتری اضافه می‌شه؟',
+        faqA4: 'بله، در نسخه‌های بعدی: جستجو و جایگزینی، تحلیل کامل، رمزنگاری (Base64، URL، ...)، قالب‌بندی و کاراکترهای خاص.'
+      },
+      en: {
+        title: '🎨 Text Studio Online',
+        subtitle: 'Edit, transform, clean, and repeat text with 30+ useful tools',
+        tabEditor: '📝 Editor',
+        tabTransform: '🔤 Transform',
+        tabCleanup: '🧹 Cleanup',
+        tabRepeat: '🔁 Repeat',
+        editorSettings: 'Editor Settings',
+        editorLabel: '📝 Text Editor',
+        fontMono: 'Mono', fontSans: 'Sans', fontSerif: 'Serif',
+        zoomIn: 'Zoom In', zoomOut: 'Zoom Out', toggleDir: 'Toggle Dir',
+        transformTitle: 'Transform Text',
+        tUppercase: 'UPPERCASE', tLowercase: 'lowercase', tTitlecase: 'Title Case',
+        tSentencecase: 'Sentence case', tTogglecase: 'tOGGLE cASE', tReversetext: 'Reverse Text',
+        tReverselines: 'Reverse Lines', tShufflelines: 'Shuffle Lines',
+        tSortaz: 'Sort A-Z', tSortza: 'Sort Z-A',
+        cleanupTitle: 'Cleanup Text',
+        cRemovespaces: 'Extra Spaces', cRemoveempty: 'Empty Lines',
+        cRemovenumbers: 'Remove Numbers', cRemoveletters: 'Remove Letters',
+        cRemovesymbols: 'Remove Symbols', cTrimlines: 'Trim Lines',
+        cRemoveduplicates: 'Duplicate Lines', cRemoveallspaces: 'All Spaces',
+        cRemovepunctuation: 'Punctuation', cRemoveemoji: 'Remove Emoji',
+        repeatTitle: 'Repeat Text',
+        repeatCount: 'Repeat Count',
+        repeatSeparator: 'Separator',
+        sepNewline: 'New Line', sepSpace: 'Space', sepComma: 'Comma',
+        sepCommaSpace: 'Comma + Space', sepNone: 'None', sepCustom: 'Custom',
+        repeatCustom: 'Custom Separator',
+        repeatNumbering: 'Numbering',
+        numNone: 'None', numDotted: '1. 2. 3.',
+        numParenthesis: '(1) (2) (3)', numDash: '1- 2- 3-',
+        repeatApply: 'Apply Repeat',
+        repeatSwap: 'Swap',
+        repeatCopy: 'Copy Result',
+        repeatPreviewLabel: 'Output character count preview:',
+        statChars: 'Chars', statWords: 'Words', statLines: 'Lines', statReadingTime: 'Read Time',
+        btnUndo: '↩️ Undo', btnRedo: '↪️ Redo',
+        btnCopy: '📋 Copy', btnDownload: '💾 Download .txt',
+        btnClear: '🗑️ Clear', btnReset: '↺ Reset',
+        copied: '✅ Copied!',
+        downloaded: '✅ Downloaded!',
+        cleared: '🗑️ Cleared',
+        reset: '↺ Reset',
+        undoed: '↩️ Undone',
+        redoed: '↪️ Redone',
+        repeated: '🔁 Repeated',
+        swapped: '🔄 Swapped',
+        noUndo: 'Nothing to undo',
+        noRedo: 'Nothing to redo',
+        promoTitle: 'My official website — psoa.ir',
+        promoSubtitle: 'Drop by, there is something interesting!',
+        footerText: 'To view the license of this website, please visit',
+        footerText2: '.',
+        seoH2: 'About Text Studio',
+        seoP1: 'Text Studio is a free online text studio that provides 30+ useful tools for working with text. From simple editing to letter transformation, cleanup, repetition, and analysis — all in one page.',
+        seoH3Features: 'Key Features',
+        feat1: '📝 Text editor with auto-save and Undo/Redo',
+        feat2: '🔤 10 text transformation tools (uppercase, lowercase, title, reverse, ...)',
+        feat3: '🧹 10 cleanup tools (spaces, empty lines, numbers, symbols, ...)',
+        feat4: '🔁 Text repeater with custom separator and numbering',
+        feat5: '📊 Live stats — characters, words, lines, reading time',
+        feat6: '🌐 Supports 3 languages (Persian, English, Chinese)',
+        feat7: '🌙 Dual themes: dark and light',
+        feat8: '📋 Copy, download, and clear with one click',
+        seoH3Faq: 'Frequently Asked Questions',
+        faqQ1: 'Is my text stored anywhere?',
+        faqA1: 'Yes, text is auto-saved in your browser (localStorage). No data is sent to any server.',
+        faqQ2: 'How do I repeat text?',
+        faqA2: 'Go to the "🔁 Repeat" tab, choose the count and separator, then click "Apply Repeat".',
+        faqQ3: 'Does it have Undo/Redo?',
+        faqA3: 'Yes, use the ↩️ and ↪️ buttons or Ctrl+Z and Ctrl+Y to undo or redo changes.',
+        faqQ4: 'Will more tools be added?',
+        faqA4: 'Yes, in future versions: find & replace, full analysis, encoding (Base64, URL, ...), formatting, and special characters.'
+      },
+      zh: {
+        title: '🎨 在线文本工作室',
+        subtitle: '使用 30 多个实用工具编辑、转换、清理和重复文本',
+        tabEditor: '📝 编辑器',
+        tabTransform: '🔤 转换',
+        tabCleanup: '🧹 清理',
+        tabRepeat: '🔁 重复',
+        editorSettings: '编辑器设置',
+        editorLabel: '📝 文本编辑器',
+        fontMono: '等宽', fontSans: '无衬线', fontSerif: '衬线',
+        zoomIn: '放大', zoomOut: '缩小', toggleDir: '切换方向',
+        transformTitle: '转换文本',
+        tUppercase: '全部大写', tLowercase: '全部小写', tTitlecase: '标题格式',
+        tSentencecase: '句子格式', tTogglecase: '反转大小写', tReversetext: '反转文本',
+        tReverselines: '反转行', tShufflelines: '打乱行',
+        tSortaz: 'A-Z 排序', tSortza: 'Z-A 排序',
+        cleanupTitle: '清理文本',
+        cRemovespaces: '多余空格', cRemoveempty: '空行',
+        cRemovenumbers: '删除数字', cRemoveletters: '删除字母',
+        cRemovesymbols: '删除符号', cTrimlines: '修剪行',
+        cRemoveduplicates: '重复行', cRemoveallspaces: '所有空格',
+        cRemovepunctuation: '标点符号', cRemoveemoji: '删除表情',
+        repeatTitle: '重复文本',
+        repeatCount: '重复次数',
+        repeatSeparator: '分隔符',
+        sepNewline: '换行', sepSpace: '空格', sepComma: '逗号',
+        sepCommaSpace: '逗号 + 空格', sepNone: '无', sepCustom: '自定义',
+        repeatCustom: '自定义分隔符',
+        repeatNumbering: '编号',
+        numNone: '无', numDotted: '1. 2. 3.',
+        numParenthesis: '(1) (2) (3)', numDash: '1- 2- 3-',
+        repeatApply: '应用重复',
+        repeatSwap: '交换',
+        repeatCopy: '复制结果',
+        repeatPreviewLabel: '输出字符数预览：',
+        statChars: '字符', statWords: '单词', statLines: '行', statReadingTime: '阅读时间',
+        btnUndo: '↩️ 撤销', btnRedo: '↪️ 重做',
+        btnCopy: '📋 复制', btnDownload: '💾 下载 .txt',
+        btnClear: '🗑️ 清空', btnReset: '↺ 重置',
+        copied: '✅ 已复制！',
+        downloaded: '✅ 已下载！',
+        cleared: '🗑️ 已清空',
+        reset: '↺ 已重置',
+        undeoed: '↩️ 已撤销',
+        redoed: '↪️ 已重做',
+        repeated: '🔁 已重复',
+        swapped: '🔄 已交换',
+        noUndo: '没有可撤销的',
+        noRedo: '没有可重做的',
+        promoTitle: '我的官方网站 — psoa.ir',
+        promoSubtitle: '来看看，会很有趣！',
+        footerText: '要查看本网站的许可证，请访问',
+        footerText2: '。',
+        seoH2: '关于 Text Studio',
+        seoP1: 'Text Studio 是一个免费的在线文本工作室，提供 30 多个用于处理文本的实用工具。从简单编辑到字母转换、清理、重复和分析——全部集中在一个页面。',
+        seoH3Features: '主要功能',
+        feat1: '📝 带自动保存和撤销/重做的文本编辑器',
+        feat2: '🔤 10 个文本转换工具（大写、小写、标题、反转等）',
+        feat3: '🧹 10 个清理工具（空格、空行、数字、符号等）',
+        feat4: '🔁 带自定义分隔符和编号的文本重复器',
+        feat5: '📊 实时统计 — 字符、单词、行、阅读时间',
+        feat6: '🌐 支持 3 种语言（波斯语、英语、中文）',
+        feat7: '🌙 双主题：深色和浅色',
+        feat8: '📋 一键复制、下载和清空',
+        seoH3Faq: '常见问题',
+        faqQ1: '我的文本会存储在哪里吗？',
+        faqA1: '是的，文本会自动保存在您的浏览器中（localStorage）。不会向任何服务器发送数据。',
+        faqQ2: '如何重复文本？',
+        faqA2: '转到“🔁 重复”选项卡，选择次数和分隔符，然后点击“应用重复”。',
+        faqQ3: '有撤销/重做吗？',
+        faqA3: '是的，使用 ↩️ 和 ↪️ 按钮或 Ctrl+Z 和 Ctrl+Y 来撤销或重做更改。',
+        faqQ4: '会添加更多工具吗？',
+        faqA4: '是的，在未来的版本中：查找和替换、完整分析、编码（Base64、URL 等）、格式化和特殊字符。'
+      }
+    };
+
+    const rtlLangs = ['fa'];
+    let currentLang = localStorage.getItem(LANG_KEY) || 'fa';
+    if (!translations[currentLang]) currentLang = 'fa';
+    let currentTheme = localStorage.getItem(THEME_KEY) || 'light';
+
+    function t(key) {
+      return translations[currentLang][key] || translations.en[key] || key;
+    }
+
+    // ============ THEME ============
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      currentTheme = theme;
+      localStorage.setItem(THEME_KEY, theme);
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0a0a0a' : '#f5f7fa');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // ============ LANGUAGE ============
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      const dir = rtlLangs.includes(lang) ? 'rtl' : 'ltr';
+      html.setAttribute('dir', dir);
+      html.setAttribute('lang', lang);
+
+      titleEl.textContent = t('title');
+      subtitleEl.textContent = t('subtitle');
+      document.title = t('title');
+
+      langBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        el.textContent = t(key);
+      });
+
+      updateStats();
+      updateRepeatPreview();
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+
+    // ============ TOAST ============
+    let toastTimer;
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+
+    // ============ STATS ============
+    function updateStats() {
+      const text = editor.value;
+      const chars = text.length;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      const lines = text ? text.split('\n').length : 0;
+      const readingMinutes = Math.floor(words / 200);
+      const readingSeconds = Math.floor((words % 200) / 200 * 60);
+
+      statChars.textContent = chars.toLocaleString();
+      statWords.textContent = words.toLocaleString();
+      statLines.textContent = lines.toLocaleString();
+      statReadingTime.textContent = `${readingMinutes}:${readingSeconds.toString().padStart(2, '0')}`;
+    }
+
+    // ============ HISTORY (Undo/Redo) ============
+    function pushHistory(value) {
+      if (skipHistory) return;
+      if (historyIndex < historyStack.length - 1) {
+        historyStack = historyStack.slice(0, historyIndex + 1);
+      }
+      historyStack.push(value);
+      if (historyStack.length > MAX_HISTORY) {
+        historyStack.shift();
+      } else {
+        historyIndex++;
+      }
+    }
+
+    function undo() {
+      if (historyIndex <= 0) {
+        showToast(t('noUndo'));
+        return;
+      }
+      historyIndex--;
+      skipHistory = true;
+      editor.value = historyStack[historyIndex];
+      skipHistory = false;
+      saveContent();
+      updateStats();
+      flashEditor();
+      showToast(t('undoed'));
+    }
+
+    function redo() {
+      if (historyIndex >= historyStack.length - 1) {
+        showToast(t('noRedo'));
+        return;
+      }
+      historyIndex++;
+      skipHistory = true;
+      editor.value = historyStack[historyIndex];
+      skipHistory = false;
+      saveContent();
+      updateStats();
+      flashEditor();
+      showToast(t('redoed'));
+    }
+
+    undoBtn.addEventListener('click', undo);
+    redoBtn.addEventListener('click', redo);
+
+    // ============ EDITOR EVENTS ============
+    let saveTimer;
+    function saveContent() {
+      localStorage.setItem(STORAGE_KEY, editor.value);
+    }
+
+    function flashEditor() {
+      editorWrapper.classList.remove('flash');
+      void editorWrapper.offsetWidth;
+      editorWrapper.classList.add('flash');
+    }
+
+    editor.addEventListener('input', () => {
+      updateStats();
+      updateRepeatPreview();
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        saveContent();
+        pushHistory(editor.value);
+      }, 500);
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        if (e.key === 'z' && !e.shiftKey) {
+          e.preventDefault();
+          undo();
+        } else if (e.key === 'y' || (e.key === 'z' && e.shiftKey)) {
+          e.preventDefault();
+          redo();
+        } else if (e.key === 's') {
+          e.preventDefault();
+          saveContent();
+          showToast('💾 ' + t('downloaded').replace('✅ ', ''));
+        } else if (e.key === 'k') {
+          e.preventDefault();
+          copyBtn.click();
+        } else if (e.key === 'd') {
+          e.preventDefault();
+          downloadBtn.click();
+        }
+      }
+    });
+
+    // ============ TABS ============
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelector('.tab.active').classList.remove('active');
+        tab.classList.add('active');
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        const target = document.querySelector(`[data-tab-content="${tab.dataset.tab}"]`);
+        if (target) target.classList.add('active');
+      });
+    });
+
+    // ============ TOOL ACTIONS ============
+    function getText() {
+      return editor.value;
+    }
+
+    function setText(text) {
+      editor.value = text;
+      saveContent();
+      updateStats();
+      updateRepeatPreview();
+      flashEditor();
+      pushHistory(text);
+    }
+
+    const actions = {
+      uppercase: () => getText().toUpperCase(),
+      lowercase: () => getText().toLowerCase(),
+      titlecase: () => getText().replace(/\w\S*/g, w => w.charAt(0).toUpperCase() + w.substr(1).toLowerCase()),
+      sentencecase: () => {
+        return getText().toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, c => c.toUpperCase());
+      },
+      togglecase: () => getText().split('').map(c => {
+        if (c === c.toUpperCase()) return c.toLowerCase();
+        if (c === c.toLowerCase()) return c.toUpperCase();
+        return c;
+      }).join(''),
+      reversetext: () => getText().split('').reverse().join(''),
+      reverselines: () => getText().split('\n').reverse().join('\n'),
+      shufflelines: () => {
+        const lines = getText().split('\n');
+        for (let i = lines.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [lines[i], lines[j]] = [lines[j], lines[i]];
+        }
+        return lines.join('\n');
+      },
+      sortaz: () => getText().split('\n').sort((a, b) => a.localeCompare(b)).join('\n'),
+      sortza: () => getText().split('\n').sort((a, b) => b.localeCompare(a)).join('\n'),
+      removespaces: () => getText().replace(/[ \t]+/g, ' '),
+      removeempty: () => getText().split('\n').filter(l => l.trim()).join('\n'),
+      removenumbers: () => getText().replace(/[0-9۰-۹]/g, ''),
+      removeletters: () => getText().replace(/[a-zA-Zآ-ی]/g, ''),
+      removesymbols: () => getText().replace(/[^\w\sآ-ی۰-۹]/g, ''),
+      trimlines: () => getText().split('\n').map(l => l.trim()).join('\n'),
+      removeduplicates: () => [...new Set(getText().split('\n'))].join('\n'),
+      removeallspaces: () => getText().replace(/\s/g, ''),
+      removepunctuation: () => getText().replace(/[.,!?;:؛،؟""''()\[\]{}<>«»\-_/\\|@#$%^&*+=~`]/g, ''),
+      removeemoji: () => getText().replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
+    };
+
+    toolBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.action;
+        if (!action || !actions[action]) return;
+        const result = actions[action]();
+        setText(result);
+      });
+    });
+
+    // ============ FONT & ZOOM ============
+    document.getElementById('fontMonoBtn').addEventListener('click', () => {
+      currentFont = 'mono';
+      editor.style.fontFamily = "'JetBrains Mono','Fira Code','Consolas','Monaco',monospace";
+    });
+    document.getElementById('fontSansBtn').addEventListener('click', () => {
+      currentFont = 'sans';
+      editor.style.fontFamily = "'Inter','Segoe UI',Tahoma,sans-serif";
+    });
+    document.getElementById('fontSerifBtn').addEventListener('click', () => {
+      currentFont = 'serif';
+      editor.style.fontFamily = "Georgia,'Times New Roman',serif";
+    });
+    document.getElementById('zoomInBtn').addEventListener('click', () => {
+      if (currentFontSize < 24) currentFontSize += 2;
+      editor.style.fontSize = currentFontSize + 'px';
+    });
+    document.getElementById('zoomOutBtn').addEventListener('click', () => {
+      if (currentFontSize > 10) currentFontSize -= 2;
+      editor.style.fontSize = currentFontSize + 'px';
+    });
+    document.getElementById('toggleDirBtn').addEventListener('click', () => {
+      editorDir = editorDir === 'ltr' ? 'rtl' : 'ltr';
+      editor.style.direction = editorDir;
+      editor.style.textAlign = editorDir === 'rtl' ? 'right' : 'left';
+    });
+
+    // ============ REPEAT ============
+    function getSeparator() {
+      const val = repeatSeparator.value;
+      switch (val) {
+        case 'newline': return '\n';
+        case 'space': return ' ';
+        case 'comma': return ',';
+        case 'commaspace': return ', ';
+        case 'none': return '';
+        case 'custom': return repeatCustom.value || '';
+        default: return '\n';
+      }
+    }
+
+    repeatSeparator.addEventListener('change', () => {
+      repeatCustom.disabled = repeatSeparator.value !== 'custom';
+      updateRepeatPreview();
+    });
+
+    [repeatCount, repeatCustom, repeatNumbering].forEach(el => {
+      el.addEventListener('input', updateRepeatPreview);
+      el.addEventListener('change', updateRepeatPreview);
+    });
+
+    function buildRepeatResult() {
+      const text = editor.value;
+      if (!text) return '';
+      const count = Math.max(1, Math.min(1000, parseInt(repeatCount.value) || 1));
+      const sep = getSeparator();
+      const numbering = repeatNumbering.value;
+
+      const parts = [];
+      for (let i = 0; i < count; i++) {
+        let part = text;
+        if (numbering === 'dotted') part = `${i + 1}. ${text}`;
+        else if (numbering === 'parenthesis') part = `(${i + 1}) ${text}`;
+        else if (numbering === 'dash') part = `${i + 1}- ${text}`;
+        parts.push(part);
+      }
+      return parts.join(sep);
+    }
+
+    function updateRepeatPreview() {
+      const result = buildRepeatResult();
+      repeatPreview.textContent = result.length.toLocaleString() + ' ' + t('statChars').toLowerCase();
+    }
+
+    applyRepeatBtn.addEventListener('click', () => {
+      const result = buildRepeatResult();
+      if (!result) {
+        showToast('⚠️ ' + t('editorLabel'));
+        return;
+      }
+      setText(result);
+      showToast(t('repeated'));
+    });
+
+    swapRepeatBtn.addEventListener('click', () => {
+      const result = buildRepeatResult();
+      if (!result) return;
+      setText(result);
+      showToast(t('swapped'));
+    });
+
+    copyResultBtn.addEventListener('click', () => {
+      const result = buildRepeatResult();
+      if (!result) return;
+      navigator.clipboard.writeText(result).then(() => {
+        showToast(t('copied'));
+      });
+    });
+
+    // ============ MAIN BUTTONS ============
+    copyBtn.addEventListener('click', () => {
+      if (!editor.value) return;
+      navigator.clipboard.writeText(editor.value).then(() => {
+        showToast(t('copied'));
+      });
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      if (!editor.value) return;
+      const blob = new Blob([editor.value], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `text-studio-${Date.now()}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(t('downloaded'));
+    });
+
+    clearBtn.addEventListener('click', () => {
+      if (!editor.value) return;
+      if (!confirm('Clear all text?')) return;
+      setText('');
+      showToast(t('cleared'));
+    });
+
+    resetBtn.addEventListener('click', () => {
+      if (!confirm('Reset everything?')) return;
+      localStorage.removeItem(STORAGE_KEY);
+      historyStack = [];
+      historyIndex = -1;
+      setText('');
+      showToast(t('reset'));
+    });
+
+    // ============ INIT ============
+    applyTheme(currentTheme);
+    applyLanguage(currentLang);
+
+    // Load saved content
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      editor.value = saved;
+    }
+    pushHistory(editor.value);
+    updateStats();
+    updateRepeatPreview();
+  </script>
+</body>
+</html>
